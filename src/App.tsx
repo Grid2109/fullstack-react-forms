@@ -3,12 +3,17 @@ import "./App.css";
 import { useState } from "react";
 
 export default function App() {
+
+  function onSubmit(e: React.FormEvent<HTMLElement>) {
+    e.preventDefault();
+  }
+
   const [name, setName] = useState("");
   return (
     <div>
       <h1>Evento {name}</h1>
 
-      <form>
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="Nome do evento"
