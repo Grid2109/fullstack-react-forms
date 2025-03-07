@@ -26,6 +26,7 @@ export default function App() {
     control,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormData>({
     defaultValues: {
       name: "",
@@ -38,6 +39,7 @@ export default function App() {
 
   function onSubmit(data: FormData) {
     console.log(data);
+    reset();
   }
 
   return (
